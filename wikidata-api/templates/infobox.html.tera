@@ -1,0 +1,32 @@
+<style>
+dt, dd {
+    display: inline-block;
+}
+dt {
+    width: 3rem;
+}
+</style>
+
+<h1>{{ infobox.title }}</h1>
+
+<img src="{{ infobox.thumbnail }}" style="max-width: 100%; max-height: 12em; display: block; margin: 0 auto; padding: 0;">
+
+<p>{{ infobox.content }}</p>
+
+<ul>
+{% for attr in infobox.attributes %}
+  <li><dt>{{ attr.property }}</dt>
+    <dd>
+        {% for v in attr.values %}
+            {{ v }},
+        {% endfor %}
+    </dd>
+  </li>
+{% endfor %}
+</ul>
+
+<ul>
+{% for url in infobox.urls %}
+    <li><a href="{{ url.value }}">{{ url.name }}</a></li>
+{% endfor %}
+<ul>

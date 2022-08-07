@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Almost Local Wikidata Demo {% if title %}- {{ title }}{% endif %}</title>
+    {% block header %}{% endblock header %}
+  </head>
+  <body>
+    {% block content %}{% endblock content %}
+
+      <footer>
+      </footer>
+  </body>
+</html>
